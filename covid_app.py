@@ -4,8 +4,8 @@ import pickle
 import streamlit as smt
 from PIL import Image
 import sklearn
-#import matplotlib.pyplot as plt
-#import seaborn as sns
+import matplotlib.pyplot as plt
+import seaborn as sns
 #from sklearn import datasets
   
 # loading in the model to predict on the data
@@ -39,7 +39,7 @@ smt.header("Subplots")
 fig=plt.figure()
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
-sns.scatter(x,y,color="blue")
+plt.scatter(x,y,color="blue")
 smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 

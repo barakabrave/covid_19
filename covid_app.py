@@ -9,7 +9,7 @@ from PIL import Image
   
 # loading in the model to predict on the data
 smt.set_page_config(layout="wide")
-pickle_in = open('virtual_env/Covid_19/model.pkl', 'rb')
+pickle_in = open('model.pkl', 'rb')
 model = pickle.load(pickle_in)
 #model=pd.read_csv("C:\Users\BRAVE BARAKA\Breast cancer prediction\data.csv")
 smt.title("Covid-19 deaths Prediction Model")

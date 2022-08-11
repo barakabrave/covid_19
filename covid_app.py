@@ -4,7 +4,7 @@ import pickle
 import streamlit as smt
 from PIL import Image
 import sklearn
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import seaborn as sns
 #from sklearn import datasets
   

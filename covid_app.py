@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import streamlit as smt
 from PIL import Image
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import seaborn as sns
 #from sklearn import datasets
   
@@ -38,7 +38,7 @@ smt.header("Subplots")
 fig=plt.figure()
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
-plt.scatter(x,y,color="blue")
+sns.scatter(x,y,color="blue")
 smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 

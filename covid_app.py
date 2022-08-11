@@ -38,7 +38,7 @@ smt.header("Subplots")
 fig=plt.figure()
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
-plt.bar(x,y,color="blue")
+plt.scatter(x,y,color="blue")
 smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 

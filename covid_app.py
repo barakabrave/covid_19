@@ -78,7 +78,7 @@ def main():
     smt.write("\n\n\n ### THE MODEL PREDICTS: ")
     
     prediction = model.predict(features)[0]
-    smt.text(f"There will {prediction} deaths.")     
+    smt.text(f"There will {prediction.round(0)} deaths.")     
      
     
 if __name__=='__main__':

@@ -27,7 +27,7 @@ smt.write("This application will be used to predict the number of people succemb
     # this line allows us to display the front end aspects we have 
     # defined in the above code
 smt.markdown(html_temp, unsafe_allow_html = True)
-df=pd.read_csv("virtual_env/Covid_19/corona.csv")
+df=pd.read_csv("corona.csv")
 smt.title('Welcome all')
 smt.write("Let's view our dataset first")
 smt.dataframe(data=df)

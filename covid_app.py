@@ -58,9 +58,9 @@ y=df["Next Week's Deaths"]
 plt.scatter(x4,y,color="blue")
 # Display the plots with reduced size
 smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig1).to_html() + '</div>', unsafe_allow_html=True)
-smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig2).to_html() + '</div>', unsafe_allow_html=True)
+smt.markdown('<div style="width: 25%; float: right;">' + smt.pyplot(fig2).to_html() + '</div>', unsafe_allow_html=True)
 smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig3).to_html() + '</div>', unsafe_allow_html=True)
-smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig4).to_html() + '</div>', unsafe_allow_html=True)
+smt.markdown('<div style="width: 25%; float: right;">' + smt.pyplot(fig4).to_html() + '</div>', unsafe_allow_html=True)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 
 #smt.write(sns.scatterplot(x="Weekly Cases",y="Next Week's Deaths",data=df,hue="Total Vaccinations"))

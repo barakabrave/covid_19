@@ -36,7 +36,7 @@ df=pd.DataFrame(df,columns=['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations
 smt.title("Analysis")
 smt.write("Below is the analysis of the dataset")
 smt.header("Subplots")
-fig=plt.figure()
+fig = plt.figure(figsize=(8, 6))
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
 plt.scatter(x,y,color="blue")

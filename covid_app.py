@@ -37,7 +37,7 @@ smt.title("Analysis")
 smt.write("Below is the analysis of the dataset")
 smt.header("Subplots")
 fig = plt.figure(figsize=(20,16))
-x=df["Weekly Cases",'Weekly Deaths', 'Daily Vaccinations', 'Daily People Vaccinated']
+x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
 plt.plot(x,y,color="blue")
 smt.pyplot(fig)

@@ -48,26 +48,24 @@ smt.pyplot(fig)
 #smt.altair_chart(df)
 
     
-def prediction(Weekly_Cases,Weekly_Deaths,Total_Vaccinations,People_Vaccinated,
-    People_Fully_Vaccinated,Total_Boosters,Daily_Vaccinations,Daily_People_Vaccinated):  
+def prediction(Weekly_Cases,Weekly_Deaths,Daily_Vaccinations,Daily_People_Vaccinated):  
    
-    prediction=model.predict([[Weekly_Cases,Weekly_Deaths,Total_Vaccinations,People_Vaccinated,
-    People_Fully_Vaccinated,Total_Boosters,Daily_Vaccinations,Daily_People_Vaccinated]])
+    prediction=model.predict([[Weekly_Cases,Weekly_Deaths,Daily_Vaccinations,Daily_People_Vaccinated]])
     print(prediction)
     return prediction
 def main():
     smt.sidebar.header("Choose your inputs")
     Weekly_Cases=smt.sidebar.number_input("Weekly_Cases")
     Weekly_Deaths=smt.sidebar.number_input("Weekly_Deaths")
-    Total_Vaccinations=smt.sidebar.number_input("Total_Vaccinations")
-    People_Vaccinated=smt.sidebar.number_input("People_Vaccinated")
-    People_Fully_Vaccinated=smt.sidebar.number_input("People_Fully_Vaccinated")
-    Total_Boosters=smt.sidebar.number_input("Total_Boosters")
+    #Total_Vaccinations=smt.sidebar.number_input("Total_Vaccinations")
+    #People_Vaccinated=smt.sidebar.number_input("People_Vaccinated")
+    #People_Fully_Vaccinated=smt.sidebar.number_input("People_Fully_Vaccinated")
+    #Total_Boosters=smt.sidebar.number_input("Total_Boosters")
     Daily_Vaccinations=smt.sidebar.number_input("Daily_Vaccinations")
     Daily_People_Vaccinated =smt.sidebar.number_input("Daily_People_Vaccinated")
     
     
-    user_data={'Weekly Cases':Weekly_Cases, 'Weekly Deaths':Weekly_Deaths, 'Total Vaccinations':Total_Vaccinations, 'People Vaccinated':People_Vaccinated, 'People Fully Vaccinated':People_Fully_Vaccinated, 'Total Boosters':Total_Boosters, 'Daily Vaccinations':Daily_Vaccinations, 'Daily People Vaccinated':Daily_People_Vaccinated}
+    user_data={'Weekly Cases':Weekly_Cases, 'Weekly Deaths':Weekly_Deaths, 'Daily Vaccinations':Daily_Vaccinations, 'Daily People Vaccinated':Daily_People_Vaccinated}
     features=pd.DataFrame(user_data,index=[0])
     result =""
     

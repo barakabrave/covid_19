@@ -36,20 +36,26 @@ df=pd.DataFrame(df,columns=['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations
 smt.title("Analysis")
 smt.write("Below is the analysis of the dataset")
 smt.header("Subplots")
-fig = plt.figure(figsize=(20,16))
+fig1 = plt.figure(figsize=(20,16))
 x1=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
 plt.scatter(x1,y,color="blue")
+fig2 = plt.figure(figsize=(20,16))
 x2=df["Weekly Deaths"]
 y=df["Next Week's Deaths"]
 plt.scatter(x2,y,color="blue")
+fig3 = plt.figure(figsize=(20,16))
 x3=df['Daily Vaccinations']
 y=df["Next Week's Deaths"]
 plt.scatter(x3,y,color="blue")
+fig4 = plt.figure(figsize=(20,16))
 x4=df['Daily People Vaccinated']
 y=df["Next Week's Deaths"]
 plt.scatter(x4,y,color="blue")
-smt.pyplot(fig)
+smt.pyplot(fig1)
+smt.pyplot(fig2)
+smt.pyplot(fig3)
+smt.pyplot(fig4)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 
 #smt.write(sns.scatterplot(x="Weekly Cases",y="Next Week's Deaths",data=df,hue="Total Vaccinations"))

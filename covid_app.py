@@ -36,31 +36,11 @@ df=pd.DataFrame(df,columns=['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations
 smt.title("Analysis")
 smt.write("Below is the analysis of the dataset")
 smt.header("Subplots")
-smt.write("Weekly Cases against Next Week's Deaths")
-fig1 = plt.figure(figsize=(8,6))
-x1=df["Weekly Cases"]
+fig=plt.figure()
+x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
-plt.scatter(x1,y,color="blue")
-smt.write("Weekly Deaths against Next Week's Deaths")
-fig2 = plt.figure(figsize=(8,6))
-x2=df["Weekly Deaths"]
-y=df["Next Week's Deaths"]
-plt.scatter(x2,y,color="blue")
-smt.write("Daily Vaccinations against Next Week's Deaths")
-fig3 = plt.figure(figsize=(8,6))
-x3=df['Daily Vaccinations']
-y=df["Next Week's Deaths"]
-plt.scatter(x3,y,color="blue")
-smt.write("Daily People Vaccinated against Next Week's Deaths")
-fig4 = plt.figure(figsize=(8,6))
-x4=df['Daily People Vaccinated']
-y=df["Next Week's Deaths"]
-plt.scatter(x4,y,color="blue")
-# Display the plots with reduced size
-smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig1).to_html() + '</div>', unsafe_allow_html=True)
-smt.markdown('<div style="width: 25%; float: right;">' + smt.pyplot(fig2).to_html() + '</div>', unsafe_allow_html=True)
-smt.markdown('<div style="width: 25%; float: left;">' + smt.pyplot(fig3).to_html() + '</div>', unsafe_allow_html=True)
-smt.markdown('<div style="width: 25%; float: right;">' + smt.pyplot(fig4).to_html() + '</div>', unsafe_allow_html=True)
+plt.scatter(x,y,color="blue")
+smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 
 #smt.write(sns.scatterplot(x="Weekly Cases",y="Next Week's Deaths",data=df,hue="Total Vaccinations"))

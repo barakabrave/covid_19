@@ -50,8 +50,7 @@ sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People V
        'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
 #sns.heatmap(heatmap_data, annot=True)
 smt.pyplot(fig)
-smt.write("From the above we can some Regressor variables such as 'Total Boosters' contribute too little to the model
-therefore we shall drop such columns")
+smt.write("From the above we can some Regressor variables such as 'Total Boosters' contribute too little to the model therefore we shall drop such columns")
 smt.write("The following is data after removing some attributes")
 df.drop("Total Boosters",axis=1,inplace=True)
 df.drop("People Fully Vaccinated",axis=1,inplace=True)
@@ -66,7 +65,7 @@ smt.write(x,y)
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
 plt.scatter(x,y,color="blue")
-smt.pyplot(fig)
+#smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 
 #smt.write(sns.scatterplot(x="Weekly Cases",y="Next Week's Deaths",data=df,hue="Total Vaccinations"))

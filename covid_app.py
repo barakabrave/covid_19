@@ -43,11 +43,11 @@ smt.write(df.isnull().sum())
 smt.write("We will then drop all null values in each column")
 smt.write(df.dropna(inplace=True))
 smt.write(df.isnull().sum())
-smt.header("ANALYSIS")
-smt.title("Correlations between different variables")
-sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
+smt.title("ANALYSIS")
+smt.header("Correlations between different variables")
+smt.write(sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
        'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
-plt.show()
+plt.show())
 
 fig=plt.figure()
 x=df["Weekly Cases"]

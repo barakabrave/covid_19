@@ -55,17 +55,17 @@ def prediction(Weekly_Cases,Weekly_Deaths,Daily_Vaccinations,Daily_People_Vaccin
     return prediction
 def main():
     smt.sidebar.header("Choose your inputs")
-    Weekly_Cases=smt.sidebar.number_input("Weekly_Cases")
+    #Weekly_Cases=smt.sidebar.number_input("Weekly_Cases")
     Weekly_Deaths=smt.sidebar.number_input("Weekly_Deaths")
     #Total_Vaccinations=smt.sidebar.number_input("Total_Vaccinations")
     #People_Vaccinated=smt.sidebar.number_input("People_Vaccinated")
     #People_Fully_Vaccinated=smt.sidebar.number_input("People_Fully_Vaccinated")
     #Total_Boosters=smt.sidebar.number_input("Total_Boosters")
     Daily_Vaccinations=smt.sidebar.number_input("Daily_Vaccinations")
-    Daily_People_Vaccinated =smt.sidebar.number_input("Daily_People_Vaccinated")
+    #Daily_People_Vaccinated =smt.sidebar.number_input("Daily_People_Vaccinated")
     
     
-    user_data={'Weekly Cases':Weekly_Cases, 'Weekly Deaths':Weekly_Deaths, 'Daily Vaccinations':Daily_Vaccinations, 'Daily People Vaccinated':Daily_People_Vaccinated}
+    user_data={'Weekly Deaths':Weekly_Deaths, 'Daily Vaccinations':Daily_Vaccinations}
     features=pd.DataFrame(user_data,index=[0])
     result =""
     

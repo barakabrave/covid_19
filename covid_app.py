@@ -15,7 +15,7 @@ model = pickle.load(pickle_in)
 #model=pd.read_csv("C:\Users\BRAVE BARAKA\Breast cancer prediction\data.csv")
 html_temp = """
     <div style ="background-color:blue ;padding:13px">
-    <h1 style ="color:black;text-align:center;">Covid-19 Deaths Prediction ML Model</h1>
+    <h1 style ="color:WHITE;text-align:center;">Covid-19 Deaths Prediction ML Model</h1>
     </div>
     """
 smt.markdown(html_temp, unsafe_allow_html = True)
@@ -106,6 +106,7 @@ def main():
     smt.write("\n\n\n ### THE MODEL PREDICTS: ")
     
     prediction = round(model.predict(features)[0],0)
+  smt.text(f"There will {prediction} deaths.") 
  
       
      

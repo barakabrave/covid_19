@@ -110,7 +110,7 @@ def main():
     <div style ="background-color:blue ;padding:13px">
     <h4 style ="color:white;text-align:center;">There will {prediction} deaths.</h4>
     </div>
-    """
+     """
 smt.markdown(html_temp, unsafe_allow_html = True)
       
      

@@ -66,22 +66,10 @@ fig2=plt.figure()
 sns.heatmap(df[['Weekly Deaths', 'Daily Vaccinations', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
 smt.pyplot(fig2)
 smt.write("And below is a multiple linear regression graph for the data: ")
-# Scatter plot
-sns.scatterplot(x="Next Week's Deaths", y='Predicted Deaths', data=df, color='blue', alpha=0.6)
-fig3=plt.figure()
-# Regression line
-sns.lineplot(x=df["Next Week's Deaths"], y=df["Next Week's Deaths"], color='red', label='Perfect Prediction')
-sns.lineplot(x=df["Next Week's Deaths"], y=df['Predicted Deaths'], color='green', label='Regression Line')
 
-plt.title('Multiple Linear Regression')
-plt.xlabel("Next Week's Deaths (Actual)")
-plt.ylabel("Next Week's Deaths (Predicted)")
-
-plt.legend()
-smt.pyplot(fig2)
-x=df["Weekly Cases"]
-y=df["Next Week's Deaths"]
-plt.scatter(x,y,color="blue")
+#x=df["Weekly Cases"]
+#y=df["Next Week's Deaths"]
+#plt.scatter(x,y,color="blue")
 #smt.pyplot(fig)
 #smt.write(sns.displot(x="Weekly Cases",kde=True,data=df,bins=5))
 
@@ -90,9 +78,9 @@ plt.scatter(x,y,color="blue")
 #smt.altair_chart(df)
 
     
-def prediction(Weekly_Cases,Weekly_Deaths,Daily_Vaccinations,Daily_People_Vaccinated):  
+def prediction(Weekly_Deaths,Daily_Vaccinations):  
    
-    prediction=model.predict([[Weekly_Cases,Weekly_Deaths,Daily_Vaccinations,Daily_People_Vaccinated]])
+    prediction=model.predict([[Weekly_Deaths,Daily_Vaccinations]])
     print(prediction)
     return prediction
 def main():

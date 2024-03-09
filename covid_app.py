@@ -65,7 +65,7 @@ smt.write("For best regression model, the regressor variables with a higher corr
 fig2=plt.figure()
 sns.heatmap(df[['Weekly Deaths', 'Daily Vaccinations', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
 smt.pyplot(fig2)
-smt.write("And below is a multiple linear regression graph for the data: ")
+#smt.write("And below is a multiple linear regression graph for the data: ")
 
 #x=df["Weekly Cases"]
 #y=df["Next Week's Deaths"]

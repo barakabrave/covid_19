@@ -61,7 +61,10 @@ df.drop("Daily People Vaccinated",axis=1,inplace=True)
 x=df[['Weekly Deaths','Daily Vaccinations']].fillna("0")
 y=df["Next Week's Deaths"]
 smt.write(x,y)
-
+smt.write("For best regression model, the regressor variables with a higher correlation should be eliminated/removed. There this heatmap displays the two variables that contribute much to the model and have less regression to one another:")
+fig2=plt.figure()
+sns.heatmap(df[['Weekly Deaths', 'Daily Vaccinations', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
+smt.pyplot(fig2)
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]
 plt.scatter(x,y,color="blue")

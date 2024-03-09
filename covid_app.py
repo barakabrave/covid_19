@@ -106,12 +106,7 @@ def main():
     smt.write("\n\n\n ### THE MODEL PREDICTS: ")
     
     prediction = round(model.predict(features)[0],0)
-  html_temp = """
-    <div style ="background-color:blue ;padding:13px">
-    <h4 style ="color:white;text-align:center;">There will {prediction} deaths.</h4>
-    </div>
-     """
-smt.markdown(html_temp, unsafe_allow_html = True)
+ smt.header("THE MODEL PREDICTS " +{prediction}+" WILL OCCUR")
       
      
     

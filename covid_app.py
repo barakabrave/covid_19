@@ -18,6 +18,7 @@ html_temp = """
     <h1 style ="color:black;text-align:center;">Covid-19 Deaths Prediction ML Model</h1>
     </div>
     """
+smt.markdown(html_temp, unsafe_allow_html = True)
 #smt.title("Covid-19 deaths Prediction Model")
       
     # here we define some of the front end elements of the web page like 
@@ -27,7 +28,6 @@ smt.write("This application will be used to predict the number of people succemb
       
     # this line allows us to display the front end aspects we have 
     # defined in the above code
-smt.markdown(html_temp, unsafe_allow_html = True)
 df=pd.read_csv("corona.csv")
 smt.title('Welcome all')
 smt.write("Let's view our dataset first")
@@ -106,7 +106,13 @@ def main():
     smt.write("\n\n\n ### THE MODEL PREDICTS: ")
     
     prediction = round(model.predict(features)[0],0)
-    smt.text(f"There will {prediction} deaths.")     
+  html_temp = """
+    <div style ="background-color:blue ;padding:13px">
+    <h4 style ="color:white;text-align:center;">There will {prediction} deaths.</h4>
+    </div>
+    """
+smt.markdown(html_temp, unsafe_allow_html = True)
+      
      
     
 if __name__=='__main__':

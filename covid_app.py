@@ -13,15 +13,16 @@ smt.set_page_config(layout="wide")
 pickle_in = open('model.pkl', 'rb')
 model = pickle.load(pickle_in)
 #model=pd.read_csv("C:\Users\BRAVE BARAKA\Breast cancer prediction\data.csv")
-smt.title("Covid-19 deaths Prediction Model")
+html_temp = """
+    <div style ="background-color:blue ;padding:13px">
+    <h1 style ="color:black;text-align:center;">Covid-19 Deaths Prediction ML Model</h1>
+    </div>
+    """
+#smt.title("Covid-19 deaths Prediction Model")
       
     # here we define some of the front end elements of the web page like 
     # the font and background color, the padding and the text to be displayed
-html_temp = """
-    <div style ="background-color:blue ;padding:13px">
-    <h1 style ="color:black;text-align:center;">Covid-19 DeathsPrediction ML App by BRAVE BARAKA</h1>
-    </div>
-    """
+
 smt.write("This application will be used to predict the number of people succembed to Covid-19")
       
     # this line allows us to display the front end aspects we have 
@@ -33,9 +34,21 @@ smt.write("Let's view our dataset first")
 smt.dataframe(data=df)
 df=pd.DataFrame(df,columns=['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
        'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"])
-smt.title("Analysis")
-smt.write("Below is the analysis of the dataset")
-smt.header("Subplots")
+smt.header("DATA PREPARATION")
+#smt.write("Below are steps that were taken to clean and prepare the data:")
+smt.write("Data Shape")
+smt.write(df.shape)
+smt.write("Total number of null values in each column:")
+smt.write(df.isnull().sum())
+smt.write("We will then drop all null values in each column")
+smt.write(df.dropna(inplace=True))
+smt.write(df.isnull().sum())
+smt.header("ANALYSIS")
+smt.title("Correlations between different variables")
+sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
+       'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
+plt.show()
+
 fig=plt.figure()
 x=df["Weekly Cases"]
 y=df["Next Week's Deaths"]

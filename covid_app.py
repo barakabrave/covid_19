@@ -45,9 +45,10 @@ smt.write(df.dropna(inplace=True))
 smt.write(df.isnull().sum())
 smt.title("ANALYSIS")
 smt.header("Correlations between different variables")
-smt.write(sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
+sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People Vaccinated',
        'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
-plt.show())
+#sns.heatmap(heatmap_data, annot=True)
+smt.pyplot()
 
 fig=plt.figure()
 x=df["Weekly Cases"]

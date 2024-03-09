@@ -106,7 +106,7 @@ def main():
     smt.write("\n\n\n ### THE MODEL PREDICTS: ")
     
     prediction = round(model.predict(features)[0],0)
- smt.header("THE MODEL PREDICTS " +{prediction}+" WILL OCCUR")
+ 
       
      
     

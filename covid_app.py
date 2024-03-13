@@ -24,7 +24,7 @@ smt.markdown(html_temp, unsafe_allow_html = True)
     # here we define some of the front end elements of the web page like 
     # the font and background color, the padding and the text to be displayed
 
-smt.write("This application will be used to predict the number of people succembed to Covid-19")
+smt.write("This application will be used to predict the number of people succumbed to Covid-19")
       
     # this line allows us to display the front end aspects we have 
     # defined in the above code
@@ -50,8 +50,8 @@ sns.heatmap(df[['Weekly Cases', 'Weekly Deaths', 'Total Vaccinations', 'People V
        'People Fully Vaccinated', 'Total Boosters', 'Daily Vaccinations', 'Daily People Vaccinated', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
 #sns.heatmap(heatmap_data, annot=True)
 smt.pyplot(fig)
-smt.write("From the above we can some Regressor variables such as 'Total Boosters' contribute too little to the model therefore we shall drop such columns")
-smt.write("The following is data after removing some attributes")
+smt.write("From the above we can see that some Regressor variables such as 'Total Boosters' contribute too little to the model therefore, we shall drop such columns")
+smt.write("The following is data after removing some columns")
 df.drop("Total Boosters",axis=1,inplace=True)
 df.drop("People Fully Vaccinated",axis=1,inplace=True)
 df.drop("People Vaccinated",axis=1,inplace=True)
@@ -61,7 +61,7 @@ df.drop("Daily People Vaccinated",axis=1,inplace=True)
 x=df[['Weekly Deaths','Daily Vaccinations']].fillna("0")
 y=df["Next Week's Deaths"]
 smt.write(x,y)
-smt.write("For best regression model, the regressor variables with a higher correlation with each other should be eliminated/removed. Therefore, this heatmap displays the two variables that contribute much to the model and have less regression to one another:")
+smt.write("For best regression model, the regressor variables with a high correlation with each other should be eliminated/removed. Therefore, this heatmap displays the two variables that contribute much to the model and have less regression to one another:")
 fig2=plt.figure()
 sns.heatmap(df[['Weekly Deaths', 'Daily Vaccinations', "Next Week's Deaths"]].corr(), cmap='Blues', annot=True)
 smt.pyplot(fig2)

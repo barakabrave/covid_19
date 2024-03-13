@@ -6,7 +6,7 @@ from PIL import Image
 import sklearn
 from matplotlib import pyplot as plt
 import seaborn as sns
-#from sklearn import datasets
+#from sklearn import dataset
   
 # loading in the model to predict on the data
 smt.set_page_config(layout="wide")
